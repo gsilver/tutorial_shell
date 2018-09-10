@@ -27,10 +27,10 @@
         <nav role="navigation">
           <ul class="nav nav-pills nav-stacked">
             <!-- navigate via href or controller function, not both -->
-            <li role="presentation" ng-class="currentView===0 ?'active':''">
-              <a href="#!/">Start</a>
+            <li role="presentation" aria-selected="currentView===0 ?true:false" ng-class="currentView===0 ?'active':''">
+              <a href="#!/">Start {{currentView===0 ?'true':'false'}}</a>
             </li>
-            <li role="presentation" ng-repeat="item in tutorial" ng-class="$parent.currentView==={{$index + 1}}?'active':''">
+            <li role="presentation" aria-selected="$parent.currentView==={{$index + 1}}?true:false" currentView===0 ?true:false" ng-repeat="item in tutorial" ng-class="$parent.currentView==={{$index + 1}}?'active':''">
               <a href="#!/{{$index + 1}}">{{item.name}}</a>
             </li>
           </ul>
